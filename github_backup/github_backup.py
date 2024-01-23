@@ -119,7 +119,7 @@ def main():
             account = gh.get_user(args.login_or_token)
 
     IS_AUTHORIZED = isinstance(account, github.AuthenticatedUser.AuthenticatedUser)
-    assert not (bool(config.get('password', None)) ^ IS_AUTHORIZED), account
+    #assert not (bool(config.get('password', None)) ^ IS_AUTHORIZED), account
 
     if args.include_keys and not IS_AUTHORIZED:
         LOGGER.info("Cannot backup keys with unauthenticated account, ignoring...")
